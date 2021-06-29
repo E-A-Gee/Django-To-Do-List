@@ -6,14 +6,19 @@
 </div>
 
 <div class="card-body">
+    <div style="text-align:right;">
+        <a class="update-link" href="{% url 'task-update' task.id %}">&#9998;</a>
+        <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>  
+    </div>
+
+
     <h1>Task: {{task}}</h1>
     {% if task.description %}
     <p>{{task.description}}</p>
     {% else %}
     <p><i>No description.</i></p>
     {% endif %}
-
-        
+     <p class="date-posted"><i>Created on {{task.created}}</i></p>   
 
 </div>
 {% endblock content %}
