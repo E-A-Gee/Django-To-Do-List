@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
 from .models import Task
+from .forms import UserRegisterForm
 
 
 # Create your views here.
@@ -22,7 +23,7 @@ class CustomLoginView(LoginView):
 
 class RegisterPage(FormView):
     template_name = 'base/register.html'
-    form_class = UserCreationForm
+    form_class = UserRegisterForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('tasks')
 
